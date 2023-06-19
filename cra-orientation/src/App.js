@@ -1,5 +1,23 @@
+import React, { useEffect } from 'react';
+import {
+  HashRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
-import { Fragment } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
+
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+
+import AboutPage from '../AboutPage/AboutPage';
+import UserPage from '../Home/Home';
+import LandingPage from '../LandingPage/LandingPage';
+import LoginPage from '../LoginPage/LoginPage';
+import RegisterPage from '../RegisterPage/RegisterPage';
 import './App.css';
 import Framework from './Framework/Framework';
 
