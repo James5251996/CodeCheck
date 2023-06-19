@@ -8,5 +8,34 @@ const userStrategy = require('../strategies/user.strategies');
 
 const router = express.Router();
 
+router.get( '/', rejectUnauthenticated, (req, res) => {
+    res.send(req.user);
+})
+
+
+router.post('/register', (req, res, next) => {
+    const username = req.body.username;
+    const password = encryptLib.encryptPassword(req.body.password);
+
+    const queryText = `INSERT INTO "user" (username, passqord)
+    VALUES ($1, $2) RETURNING id;`
+
+    pool.query(queryText, [username, password])
+    .then(() => res.sendStatus(201))
+    .catch((error) => {
+        console.log('User registration failed:', error)
+        res.sendStatus(500);
+    
+    })
+})
+
+router.post('/login', userStrategy.authenticate('local'), (req, res) => {
+res.sendStatus(200)
+});
+
+router.post('/logout', (req, res) => {
+    req.logout();
+    res.sendStatus(200);
+});
 
 module.exports = router;
