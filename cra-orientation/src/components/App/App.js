@@ -19,7 +19,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import './App.css';
-import Framework from '../Framework/Framework';
+import Framework from '../../Framework/Framework';
 
 function App() {
 
