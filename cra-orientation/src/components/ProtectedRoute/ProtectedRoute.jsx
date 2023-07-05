@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Redirect } from 'react-router-dom';
 // here i need to import the login page component
+import LoginPage from "../LoginPage/LoginPage";
 import { useSelector } from "react-redux";
 
 function ProtectedRoute({ component, children, ...props }) {

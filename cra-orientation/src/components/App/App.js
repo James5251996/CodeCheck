@@ -1,19 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Switch, Redirect } from 'react';
 import {
   HashRouter as Router,
-  Redirect,
   Route,
-  Switch,
 } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import Nav from '../Nav/Nav';
-
+import HomePage from '../Home/Home';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../Home/Home';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -33,11 +28,10 @@ function App() {
   return (<>
     <Router>
       <div>
-        <Nav/>
         <Switch>
           <Redirect exact from='/' to='/home'/>
           <Route exact path='home'>
-            {/* this is the home page for handling questions. */}
+           <HomePage/>
           </Route>
         </Switch>
       </div>
