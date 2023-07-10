@@ -1,4 +1,4 @@
-import React, { useEffect, Switch, Redirect } from 'react';
+import React, { useEffect, Switch, Redirect, Component } from 'react';
 import {
   HashRouter as Router,
   Route,
@@ -29,10 +29,9 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Redirect exact from='/' to='/home'/>
-          <Route exact path='home'>
+          <ProtectedRoute exact path='home'>
            <HomePage/>
-          </Route>
+          </ProtectedRoute>
         </Switch>
       </div>
     </Router>
