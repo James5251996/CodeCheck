@@ -1,4 +1,4 @@
-import React, { useEffect, Switch, Redirect, Component } from 'react';
+import React, { useEffect, Switch, Redirect, Component, Fragment } from 'react';
 import {
   HashRouter as Router,
   Route,
@@ -25,17 +25,17 @@ function App() {
     dispatch({ type: 'FETCH_USER'})
   }, [dispatch]);
 
-  return (<>
+  return (
     <Router>
       <div>
         <Switch>
-          <ProtectedRoute exact path='home'>
+          <ProtectedRoute exact path='/home'>
            <HomePage/>
           </ProtectedRoute>
         </Switch>
       </div>
     </Router>
-  </>);
+  );
 }
 
 export default App;
