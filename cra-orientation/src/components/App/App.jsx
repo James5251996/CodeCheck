@@ -1,21 +1,19 @@
-import React, { useEffect, Switch, Redirect, Component, Fragment } from 'react';
+import React, { useEffect } from 'react';
 import {
   HashRouter as Router,
   Route,
+  Switch
 } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 
 import HomePage from '../Home/Home';
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import LandingPage from '../LandingPage/LandingPage';
-import LoginPage from '../LoginPage/LoginPage';
-import RegisterPage from '../RegisterPage/RegisterPage';
+
 import './App.css';
-import Framework from '../../Framework/Framework';
 
-function App() {
+
+function MyApp() {
 
   const dispatch = useDispatch();
 
@@ -29,13 +27,13 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <ProtectedRoute exact path='/home'>
+          <Route exact path='/home'>
            <HomePage/>
-          </ProtectedRoute>
+          </Route>
         </Switch>
       </div>
     </Router>
   );
 }
 
-export default App;
+export default MyApp;
