@@ -1,13 +1,14 @@
 import React from "react";
 // here i need to import the login form. 
-import { useHistory } from 'react';
+import { useHistory } from "react-router-dom";
+import LoginForm from '../LoginForm/LoginForm'
 
 function LoginPage() {
     const history = useHistory();
 
     return (
         <div>
-            {/* log in form.  */}
+            <LoginForm/>
 
             <center>
                 <button
