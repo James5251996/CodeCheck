@@ -46,7 +46,7 @@ function RegisterForm() {
                     name='password'
                     value={password}
                     required
-                    onChange={(event) => setPassword(event.target.default)}
+                    onChange={(event) => setPassword(event.target.value)}
                     />
                 </label>
             </div>
