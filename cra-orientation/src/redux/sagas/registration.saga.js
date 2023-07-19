@@ -3,7 +3,9 @@ import axios from 'axios';
 
 function* registerUser(action) {
     try {
-        yield put({ type: 'CLEAR_REGISTRATOIN_FORM'});
+        yield put({ type: 'CLEAR_REGISTRATOIN_ERROR'});
+
+        console.log('this is my action payload:', action.payload)
 
         yield axios.post('/api/user/register', action.payload);
 

@@ -8,7 +8,7 @@ const passport = require('./strategies/user.strategies');
 
 // My Routes
 const questionRouter = require('./routes/questions.route')
-const userRouter = require('./routes/user.router');
+const userRouter = require('./routes/user.route');
 
 
 // Body parser middleware
