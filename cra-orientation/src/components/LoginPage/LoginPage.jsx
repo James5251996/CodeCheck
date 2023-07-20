@@ -20,6 +20,7 @@ function LoginPage() {
                     Register
                 </button>
             </center>
+            <button onClick={() => {history.push('/home')}}>Home Page</button>
         </div>
     )
 }
